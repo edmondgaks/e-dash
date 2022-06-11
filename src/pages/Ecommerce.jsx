@@ -4,6 +4,7 @@ import { GoPrimitiveDot } from 'react-icons/go';
 import { Stacked,Pie,Button,Sparkline } from '../components';
 import { earningData,SparklineAreaData,ecomPieChartDat } from '../data/dummy';
 import { useStateContext } from '../context/ContextProvider';
+import { itemsToOrder } from '@syncfusion/ej2/treemap';
 
 
 const Ecommerce = () => {
@@ -18,7 +19,7 @@ const Ecommerce = () => {
             </div>
           </div>
           <div className='mt-6'>
-            <Button color='white' bgColor='blue' text='Download' borderRadius='10px'  />
+            <Button color='white' bgColor='blue' text='Download' borderRadius='10px' />
           </div>
         </div>
         <div className='flex m-3 flex-wrap justify-center gap-1 items-center'>
@@ -31,8 +32,22 @@ const Ecommerce = () => {
                 <span className='text-lg font-semibold'>{item.amount}</span>
                 <span className={`text-sm text-${item.pcColor} ml-2`}>{item.percentage}</span>
               </p>
+              <p className='text-sm text-gray-400 mt-1'>{item.title}</p>
             </div>
           ))}
+        </div>
+      </div>
+      <div className='flex gap-10 flex-wrap justify-center'>
+        <div className='bg-white dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780'>
+          <div className='flex justify-between'>
+            <p className='font-semibold text-xl'>Revenue Updates</p>
+            <div className='flex items-center gap-4'>
+              <p className='flex items-center gap-2 text-gray-600 hover:drop-shadow-xl'>
+                <span><GoPrimitiveDot /></span>
+                <span>Expenses</span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
