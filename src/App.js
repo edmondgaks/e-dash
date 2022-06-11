@@ -7,10 +7,10 @@ import {Ecommerce,Orders,Calendar,Employees,Stacked,Bar,Pie,Financial,ColorPicke
 import './App.css';
 
 import './index.css';
-
+import { useStateContext } from './context/ContextProvider';
 
 const App = () => {
-    const activeMenu = true;
+    const { activeMenu } = useStateContext();
   return (
     <div>
         <BrowserRouter>
