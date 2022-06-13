@@ -704,6 +704,7 @@ export const recentTransactions = [
   },
 ];
 
+
 export const weeklyStats = [
   {
     icon: <FiShoppingCart />,
