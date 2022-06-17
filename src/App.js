@@ -10,7 +10,7 @@ import './index.css';
 import { useStateContext } from './context/ContextProvider';
 
 const App = () => {
-    const { activeMenu } = useStateContext();
+    const { activeMenu,themeSettings } = useStateContext();
   return (
     <div>
         <BrowserRouter>
@@ -32,9 +32,8 @@ const App = () => {
                     <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
                         <Navbar />
                     </div>
-                
-
                 <div>
+                    {<ThemeSettings />}
                     <Routes>
                         {/* Dashboard */}
                         <Route path='/' element={<Ecommerce />} />
