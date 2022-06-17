@@ -10,7 +10,7 @@ import './index.css';
 import { useStateContext } from './context/ContextProvider';
 
 const App = () => {
-    const { activeMenu,themeSettings,setThemeSettings } = useStateContext();
+    const { activeMenu,themeSettings, } = useStateContext();
   return (
     <div>
         <BrowserRouter>
