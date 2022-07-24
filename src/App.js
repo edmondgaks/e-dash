@@ -5,19 +5,18 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import {Navbar,footer,Sidebar,ThemeSettings} from './components';
 import {Ecommerce,Orders,Calendar,Employees,Stacked,Bar,Pie,Financial,ColorPicker,ColorMapping,Editor,Line,Customers,Kanban,Area,Pyramid} from './pages';
 import './App.css';
-
 import './index.css';
 import { useStateContext } from './context/ContextProvider';
 
 const App = () => {
-    const { activeMenu,themeSettings, } = useStateContext();
+    const { activeMenu,themeSettings, setThemeSettings,currentColor} = useStateContext();
   return (
     <div>
         <BrowserRouter>
             <div className='flex relative dark:bg-main-dark-bg'>
                 <div className='fixed right-4 bottom-4 z-50'>
                     <TooltipComponent content="Settings" position="Top">
-                        <button type='button' className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white' style={{ background: 'blue', borderRadius: '50%' }} onClick={() => setThemeSettings(true)}>
+                        <button type='button' className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white' style={{ background: currentColor, borderRadius: '50%' }} onClick={() => setThemeSettings(true)}>
                             <FiSettings />
                         </button>
                     </TooltipComponent>
@@ -40,7 +39,6 @@ const App = () => {
                         <Route path='/ecommerce' element={<Ecommerce />} />
                         {/* Pages */}
                         <Route path='/orders' element={<Orders />} />
-
                         <Route path='/employees' element={<Employees/>} />
                         <Route path='/customers' element={<Customers />} />
                         {/* Apps */}

@@ -18,14 +18,14 @@ export const ContextProvider = ({ children }) => {
     const [themeSettings, setThemeSettings] = useState(false);
     
     
-    const setMode = (e) => {
-        setcurrentMode(e.target.value);
-        localStorage.setItem('themeMode',e.target.value);
+    const setMode = (setMode) => {
+        setcurrentMode(mode);
+        localStorage.setItem('themeMode',mode);
         setThemeSettings(false);
     }
-    const setColor = (e) => {
-        setcurrentColor(e.target.value);
-        localStorage.setItem('colorModeg',e.target.value);
+    const setColor = (color) => {
+        setcurrentColor(color);
+        localStorage.setItem('colorModeg',color);
         setThemeSettings(false);
     }
     const handleClick = (clicked) => {
